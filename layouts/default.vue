@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <Nuxt />
   </div>
 </template>
 
@@ -8,9 +8,7 @@
   import Vue from 'vue'
 
   export default Vue.extend({
-    created(){
-      this.$router.push('/user')
-    }
+    
   })
 </script>
 
