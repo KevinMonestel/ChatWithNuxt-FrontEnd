@@ -5,14 +5,18 @@ body{
 }
 
 .twe-container{
-  @apply min-h-screen h-screen flex flex-col justify-center items-center bg-gray-100
+  @apply h-screen min-h-screen flex flex-col justify-center items-center bg-gray-100
+}
+
+.twe-card{
+  @apply border p-5 bg-white rounded shadow-md
 }
 
 .twe-chat-logo{
   @apply h-24 w-24
 }
 
-.twe-form-input{
+.twe-form-control{
   @apply my-3
 }
 
@@ -22,4 +26,53 @@ body{
 
 .twe-input{
   @apply w-full border shadow-inner p-3 focus:outline-none focus:bg-gray-50 rounded
+}
+
+.twe-chat-content{
+  @apply max-h-96 overflow-auto
+}
+
+.twe-chat-info{
+  @apply text-gray-400 text-sm
+}
+
+.twe-chat-item{
+  @apply my-4
+}
+
+.twe-chat-msg{
+  @apply py-1 px-2 bg-gray-50 rounded shadow-inner max-w-md
+}
+
+.twe-chat-emitor {
+  @apply text-sm mt-2 text-gray-400
+}
+
+::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track:hover,
+::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
 }

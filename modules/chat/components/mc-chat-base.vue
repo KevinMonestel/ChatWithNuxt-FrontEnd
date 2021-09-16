@@ -1,13 +1,13 @@
 <template>
-<div>
+<div class="flex justify-center flex-col w-full md:w-5/12">
   <div class="text-right">
     <button @click="disconnectUserToTheHub">
-      <img src="https://icon-library.com/images/icon-cross/icon-cross-2.jpg" alt="" class="w-58 h-5">
+      <img src="https://cdn.iconscout.com/icon/free/png-256/exit-2879028-2393856.png" alt="" class="w-58 h-5">
     </button>
   </div>
-  <div class="w-96 bg-white border p-5 rouded">
-    <slot></slot>
+  <div class="twe-card twe-chat-content" id="chat-content">
   </div>
+  <mc-chat-msg-form v-on:sendMsg="SendMsgToTheHub"/>
 </div>
 </template>
 
@@ -18,7 +18,12 @@
     methods:{
       disconnectUserToTheHub(){
         this.$store.commit('user/deleteUserName');
+        this.$emit('DisconnectUserToTheHub')
         this.$router.push('/user')
+      },
+
+      SendMsgToTheHub(msg:string){
+        this.$emit("SendMsgToTheHub", msg);
       }
     }
   })
