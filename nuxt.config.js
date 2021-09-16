@@ -18,14 +18,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/css/base.css'
   ],
-
-  tailwindcss: {
-    cssPath: '~/assets/css/base.css',
-    configPath: 'tailwind.config.js',
-    exposeConfig: false,
-    config: {}
-  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -71,5 +65,17 @@ export default {
     name: 'rectangle-bounce',
     color: '#333',
     background: '#e9e9e9'
+  },
+
+  tailwindcss: {
+    // add '~tailwind.config` alias
+    exposeConfig: true
+  },
+  build: {
+    postcss: {
+      plugins: {
+        
+      }
+    }
   }
 }
