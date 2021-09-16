@@ -5,10 +5,10 @@
         <label for="formUserModel.username">Enter your username</label>
       </div>
       <div class="twe-form-input">
-        <input type="text" v-model="formUserModel.username" id="formUserModel.username" class="twe-input">
+        <input type="text" v-model="formUserModel.username" id="formUserModel.username" class="twe-input" placeholder="Username...">
       </div>
       <div class="twe-form-input text-right">
-        <input type="submit" value="Register" class="twe-button">
+        <input type="submit" value="Join to hub" class="twe-button">
       </div>
     </form>
   </div>
