@@ -1,3 +1,5 @@
+import { join } from 'path'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -74,7 +76,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-        
+        tailwindcss: join(__dirname, 'tailwind.config.js')
       }
     }
   }
