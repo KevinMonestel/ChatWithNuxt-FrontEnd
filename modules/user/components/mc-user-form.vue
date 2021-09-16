@@ -1,13 +1,13 @@
 <template>
-  <div class="border p-5 bg-white w-full md:w-96 rounded">
+  <div class="twe-card w-full md:w-96">
     <form @submit.prevent="SetUserNameAndRegisterToHub" autocomplete="off">
-      <div class="twe-form-imput">
+      <div class="twe-form-control">
         <label for="formUserModel.username">Enter your username</label>
       </div>
-      <div class="twe-form-input">
-        <input type="text" v-model="formUserModel.username" id="formUserModel.username" class="twe-input" placeholder="Username...">
+      <div class="twe-form-control">
+        <input type="text" v-model="formUserModel.username" id="formUserModel.username" class="twe-input" placeholder="Username..." required>
       </div>
-      <div class="twe-form-input text-right">
+      <div class="twe-form-control text-right">
         <input type="submit" value="Join to hub" class="twe-button">
       </div>
     </form>
@@ -27,7 +27,19 @@
     },
 
     methods: {
-      SetUserNameAndRegisterToHub(){
+      async SetUserNameAndRegisterToHub(){
+        let userValid:boolean = false;
+
+        var apiResponse = await fetch(`${this.$config.publicConfig.baseURL}user/validate?username=${this.formUserModel.username}`);
+        var json = await apiResponse.json();
+
+        userValid = json;
+
+        if(!userValid) {
+          alert('Invalid user');
+          return;
+        }
+
        this.$store.commit('user/setUserName', this.formUserModel.username);
        
        window.location.href = "/chat";

@@ -1,4 +1,4 @@
-import { join } from 'path'
+const publicConfig = require("./runtimePublic.config.js");
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -66,5 +66,9 @@ export default {
     name: 'rectangle-bounce',
     color: '#333',
     background: '#e9e9e9'
+  },
+
+  publicRuntimeConfig: {
+    publicConfig
   }
 }
