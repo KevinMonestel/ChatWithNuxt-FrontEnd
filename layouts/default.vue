@@ -12,31 +12,6 @@
   })
 </script>
 
-<style lang="postcss">
-@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+<style>
 
-body{
-  font-family: 'Jura', sans-serif;
-}
-
-
-.twe-container{
-  @apply container mx-auto px-1 md:px-0 min-h-screen h-screen flex flex-col justify-center items-center bg-gray-100
-}
-
-.twe-chat-logo{
-  @apply h-24 w-24
-}
-
-.twe-form-input{
-  @apply my-3
-}
-
-.twe-button{
- @apply bg-gray-600 text-white px-3 py-1 rounded hover:bg-yellow-600 cursor-pointer	transition-colors
-}
-
-.twe-input{
-  @apply w-full border shadow-inner p-3 focus:outline-none focus:bg-gray-50 rounded
-}
 </style>
