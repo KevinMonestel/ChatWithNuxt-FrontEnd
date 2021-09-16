@@ -6,7 +6,7 @@ body{
 
 
 .twe-container{
-  @apply container mx-auto px-1 md:px-0 min-h-screen h-screen flex flex-col justify-center items-center bg-gray-100
+  @apply min-h-screen h-screen flex flex-col justify-center items-center bg-gray-100
 }
 
 .twe-chat-logo{
