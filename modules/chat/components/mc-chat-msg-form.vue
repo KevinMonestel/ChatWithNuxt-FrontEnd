@@ -2,13 +2,15 @@
   <div>
     <form @submit.prevent="sendMsg">
       <div class="twe-form-control relative">
-        <textarea
-          wrap="soft"
-          class="twe-input resize-none"
-          cols="1"
-          placeholder="New message..."
-          v-model="msg"
-        />
+        <p 
+          class="twe-input cursor-text"
+          @input="setMsg"
+          role="textbox"
+          contenteditable
+          id="msg-content-editable"
+          data-placeholder="Message..."
+          >
+        </p>
 
         <emoji-picker @emoji="insert" :search="search">
           <div
@@ -38,6 +40,7 @@
                       :key="emojiName"
                       @click="insert(emoji)"
                       :title="emojiName"
+                      class="cursor-pointer hover:bg-gray-700 rounded"
                       >{{ emoji }}</span
                     >
                   </div>
@@ -64,11 +67,16 @@ export default Vue.extend({
     return {
       msg: "",
       search: "",
+      msgContent: {} as HTMLElement|null
     };
   },
 
   components: {
     EmojiPicker,
+  },
+
+  created(){
+    
   },
 
   methods: {
@@ -77,14 +85,30 @@ export default Vue.extend({
 
       this.$emit("sendMsg", this.msg);
       this.msg = '';
+      this.msgContent = document.querySelector('#msg-content-editable');
+
+      if(this.msgContent)
+        this.msgContent.innerText = this.msg;
     },
 
     insert(emoji: string) {
       this.msg += emoji;
+
+      this.msgContent = document.querySelector('#msg-content-editable');
+
+      if(this.msgContent)
+        this.msgContent.innerText = this.msg;
     },
+
+    setMsg(e: { target: HTMLInputElement; }){
+      this.msg = e.target.innerText;
+    }
   },
 });
 </script>
 
 <style scoped>
+#msg-content-editable:empty:before {
+    content: attr(data-placeholder);
+}
 </style>
