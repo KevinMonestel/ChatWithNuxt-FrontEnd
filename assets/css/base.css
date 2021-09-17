@@ -33,7 +33,7 @@ body{
 }
 
 .twe-chat-info{
-  @apply text-gray-400 text-sm
+  @apply text-gray-400 text-sm text-center
 }
 
 .twe-chat-item{

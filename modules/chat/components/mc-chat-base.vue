@@ -2,7 +2,7 @@
 <div class="flex justify-center flex-col w-full md:w-5/12">
   <div class="text-right">
     <button @click="disconnectUserToTheHub">
-      <img src="https://cdn.iconscout.com/icon/free/png-256/exit-2879028-2393856.png" alt="" class="w-58 h-5">
+      <img src="https://icons-for-free.com/iconfiles/png/512/logout-1324760598547500271.png" alt="" class="w-58 h-5" title="Exit">
     </button>
   </div>
   <div class="twe-card twe-chat-content" id="chat-content">
