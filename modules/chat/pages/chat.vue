@@ -12,7 +12,7 @@
 import Vue from "vue";
 import { mapState } from "vuex";
 import { HubConnectionBuilder, LogLevel } from "@aspnet/signalr";
-import {Howl} from 'howler';
+const {Howl} = require('howler');
 
 export default Vue.extend({
   data() {
